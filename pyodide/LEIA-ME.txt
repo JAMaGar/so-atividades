@@ -1,0 +1,2 @@
+Pyodide 0.27.8 (Python compilado para WebAssembly), copiado sem alterações do pacote npm "pyodide".
+Licença MPL-2.0 — https://github.com/pyodide/pyodide. Usado só pelo painel do professor.

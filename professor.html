@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Painel do professor · Atividades de SO</title>
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/professor.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-in">
+    <div><div class="marca">PAINEL DO PROFESSOR</div><div class="sub">Sistemas Operacionais · Fatec São Paulo</div></div>
+  </div>
+</header>
+<main class="largo">
+  <section id="entrada" hidden>
+    <div class="cartao estreito">
+      <h1>Chave do professor</h1>
+      <p class="nota">Está na aba <b>Leia-me</b> da planilha de entregas. Fica guardada só enquanto esta aba do navegador estiver aberta.</p>
+      <form id="form-chave"><label>Chave<input id="chave" type="password" autocomplete="off"></label>
+        <button class="btn primario" type="submit">Abrir painel</button></form>
+      <div id="msg-chave"></div>
+    </div>
+  </section>
+  <section id="painel" hidden>
+    <div class="barra-aluno">
+      <span><b id="n-alunos">–</b> alunos cadastrados · <a id="planilha" target="_blank" rel="noopener">abrir a planilha</a> ·
+        <span id="py" class="py">…</span></span>
+      <span><button class="link" id="bt-sair">sair</button></span>
+    </div>
+    <nav class="abas" id="abas"></nav>
+    <div id="msg"></div>
+    <div id="conteudo"></div>
+    <div id="detalhe"></div>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="pyodide/pyodide.js"></script>
+<script src="js/professor.js"></script>
+</body>
+</html>

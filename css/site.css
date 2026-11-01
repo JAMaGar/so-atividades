@@ -1,0 +1,47 @@
+/* Site das atividades — mesma paleta das páginas das aulas. */
+:root{
+  --navy:#08192D; --ink:#102A43; --red:#A6192E; --blue:#1F4E78; --green:#548235; --gold:#BF9000;
+  --txt:#343F4F; --muted:#768499; --hair:#E1E6ED; --tint:#F6F8FB; --ok:#EAF3E4; --erro:#FBEAEC;
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; font-family:var(--fonte); font-size:16px; line-height:1.5; color:var(--txt); background:var(--tint)}
+.topo{background:var(--navy); color:#fff}
+.topo-in{max-width:980px; margin:0 auto; padding:.75rem 1rem; display:flex; justify-content:space-between; align-items:center}
+.marca{font-size:.74rem; letter-spacing:.14em; font-weight:700; color:#E9B4B8}
+.sub{font-size:.8rem; color:#B8C4D4}
+main{max-width:980px; margin:0 auto; padding:1rem .7rem 3rem}
+h1{font-size:1.45rem; color:var(--ink); margin:.1rem 0 .4rem}
+h2{font-size:1.15rem; color:var(--ink); margin:.1rem 0 .2rem}
+.cartao{background:#fff; border:1px solid var(--hair); border-radius:14px; padding:1.1rem 1.1rem}
+.estreito{max-width:430px; margin:1.2rem auto}
+label{display:block; font-size:.85rem; font-weight:600; color:var(--ink); margin:.75rem 0 .2rem}
+input{display:block; width:100%; margin-top:.25rem; font:inherit; font-size:1.05rem; padding:.62rem .7rem;
+      border:1px solid #C9D2DE; border-radius:10px; background:#fff}
+input:focus{outline:2px solid #9BB8D8; border-color:var(--blue)}
+.btn{font:inherit; font-weight:600; border-radius:10px; border:1px solid #C9D2DE; background:#fff; color:var(--ink);
+     padding:.7rem 1rem; cursor:pointer}
+.btn.primario{background:var(--red); border-color:var(--red); color:#fff; width:100%; margin-top:1rem; font-size:1.05rem}
+.btn:disabled{opacity:.6; cursor:wait}
+.nota{font-size:.86rem; color:var(--muted); margin:.35rem 0}
+.pe{margin-top:1rem; border-top:1px solid var(--hair); padding-top:.7rem}
+.aviso{background:var(--erro); border-left:4px solid var(--red); padding:.6rem .8rem; border-radius:0 8px 8px 0;
+       margin:.8rem 0; font-size:.92rem}
+.barra-aluno{display:flex; flex-wrap:wrap; justify-content:space-between; gap:.3rem; font-size:.88rem;
+             color:var(--ink); padding:.2rem .2rem .6rem}
+.link{background:none; border:0; color:var(--blue); font:inherit; text-decoration:underline; cursor:pointer; padding:0}
+.abas{display:flex; gap:.4rem; overflow-x:auto; padding-bottom:.3rem; -webkit-overflow-scrolling:touch}
+.aba{flex:0 0 auto; display:flex; flex-direction:column; align-items:flex-start; gap:.15rem; min-width:7.2rem;
+     font:inherit; text-align:left; background:#fff; border:1px solid var(--hair); border-radius:12px;
+     padding:.5rem .75rem; cursor:pointer; color:var(--ink)}
+.aba.ativa{border-color:var(--navy); box-shadow:inset 0 -3px 0 var(--red)}
+.selo{font-size:.7rem; font-weight:600; padding:.05rem .45rem; border-radius:99px; background:#EEF2F6; color:var(--muted)}
+.selo.ok{background:var(--ok); color:#2F4A1C}
+.selo.aberta{background:#E8F0F9; color:var(--blue)}
+.selo.fechada{background:#F3EEE2; color:#7A5C00}
+.cab-aula{margin:.8rem .2rem .5rem}
+.cab-aula p{margin:.2rem 0; font-size:.92rem}
+.vazio{margin-top:1rem}
+#quadro[hidden]{display:none}
+#quadro{display:block; width:100%; border:1px solid var(--hair); border-radius:14px; background:#fff; min-height:600px}

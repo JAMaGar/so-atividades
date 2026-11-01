@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atividades · Sistemas Operacionais · Fatec São Paulo</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-in">
+    <div><div class="marca">SISTEMAS OPERACIONAIS</div><div class="sub">Fatec São Paulo · ADS · atividades das aulas</div></div>
+    <div class="topo-dir" id="topo-dir"></div>
+  </div>
+</header>
+
+<main>
+  <!-- entrada -->
+  <section id="entrada" hidden>
+    <div class="cartao estreito">
+      <h1>Entrar</h1>
+      <p class="nota">Use o seu RM (registro de matrícula). No primeiro acesso você cria a sua senha.</p>
+      <form id="form-entrada" autocomplete="on">
+        <label>RM<input id="rm" inputmode="numeric" autocomplete="username" required maxlength="20"></label>
+        <label>Senha<input id="senha" type="password" autocomplete="current-password" required maxlength="40"></label>
+        <p class="nota" id="dica-senha"></p>
+        <div id="cadastro" hidden>
+          <label>Repita a senha<input id="senha2" type="password" autocomplete="new-password" maxlength="40"></label>
+          <label>Nome completo<input id="nome-c" autocomplete="name" maxlength="80"></label>
+          <label>Turma<input id="turma-c" placeholder="ex.: ADS 1º noturno" maxlength="40"></label>
+          <p class="nota">Confira o RM e o nome: eles identificam todas as suas entregas.</p>
+        </div>
+        <button class="btn primario" id="bt-entrar" type="submit">Entrar</button>
+      </form>
+      <div id="msg-entrada"></div>
+      <p class="nota pe">Esqueceu a senha? Peça ao professor para zerá-la; a próxima senha que você digitar passa a valer.</p>
+    </div>
+  </section>
+
+  <!-- área do aluno -->
+  <section id="area" hidden>
+    <div class="barra-aluno">
+      <span id="quem"></span>
+      <span class="acoes"><button class="link" id="bt-senha">trocar senha</button> · <button class="link" id="bt-sair">sair</button></span>
+    </div>
+    <nav class="abas" id="abas" role="tablist"></nav>
+    <div id="cab-aula" class="cab-aula"></div>
+    <div id="vazio" class="cartao vazio">
+      <p><b>Escolha uma aula acima.</b></p>
+      <p class="nota">Cada aula tem uma entrega única. Responda com calma: as respostas ficam salvas neste
+        aparelho enquanto você trabalha, e só são enviadas quando você tocar em <b>Entregar</b>.</p>
+    </div>
+    <iframe id="quadro" title="Atividade da aula" hidden></iframe>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/so.js"></script>
+</body>
+</html>

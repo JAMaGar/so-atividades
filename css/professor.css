@@ -1,0 +1,29 @@
+main.largo{max-width:1280px}
+.aba{min-width:8.4rem}
+.aba span{font-size:.75rem; color:var(--muted)}
+.selos{display:flex; gap:.25rem}
+i.s{font-style:normal; font-size:.68rem; font-weight:600; padding:.02rem .4rem; border-radius:99px; background:#EEF2F6; color:var(--muted)}
+i.s.ok{background:var(--ok); color:#2F4A1C} i.s.aberta{background:#E8F0F9; color:var(--blue)} i.s.fechada{background:#F3EEE2; color:#7A5C00}
+.cab{margin:1rem 0 .4rem}
+.controles{display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; margin:.5rem 0}
+.controles .btn{padding:.5rem .8rem; font-size:.9rem}
+.controles .btn.primario{width:auto; margin:0}
+.auto{display:inline-flex; gap:.35rem; align-items:center; font-weight:400; font-size:.85rem; margin:0}
+.auto input{width:auto; margin:0}
+.kpis{display:flex; flex-wrap:wrap; gap:.5rem; margin:.6rem 0}
+.kpi{background:#fff; border:1px solid var(--hair); border-radius:12px; padding:.5rem .8rem; min-width:9rem}
+.kpi b{display:block; font-size:1.35rem; color:var(--ink)} .kpi span{font-size:.78rem; color:var(--muted)}
+.comentar{background:var(--erro); border-left:4px solid var(--red); padding:.6rem .8rem; border-radius:0 8px 8px 0; margin:.6rem 0; font-size:.9rem}
+.aviso.ok{background:var(--ok); border-left-color:var(--green)}
+.tabela-rolagem{overflow-x:auto; background:#fff; border:1px solid var(--hair); border-radius:12px}
+table.t{border-collapse:collapse; width:100%; font-size:.86rem}
+.t th{background:var(--navy); color:#fff; font-weight:600; text-align:left; padding:.45rem .5rem; white-space:nowrap; font-size:.78rem}
+.t td{padding:.4rem .5rem; border-bottom:1px solid #EEF2F6; white-space:nowrap}
+.t td.num{text-align:center} .t td.alto{background:#EAF3E4} .t td.baixo{background:#FBEAEC}
+.t a{color:var(--blue)}
+.mini{font:inherit; font-size:.75rem; border:1px solid #C9D2DE; background:#fff; border-radius:8px; padding:.2rem .5rem; cursor:pointer; color:var(--red)}
+.faltam{margin:.8rem 0; font-size:.88rem} .faltam summary{cursor:pointer; color:var(--ink)}
+#detalhe .cartao{margin-top:1rem} #detalhe h3{font-size:1rem; color:var(--ink); margin:0 0 .5rem}
+#detalhe pre{white-space:pre-wrap; font-size:.82rem; background:var(--tint); padding:.8rem; border-radius:8px; max-height:70vh; overflow:auto}
+.py{font-size:.8rem; color:var(--muted)} .py.ok{color:var(--green)} .py.erro{color:var(--red)}
+.filtro{max-width:380px; margin:.4rem 0 .7rem}

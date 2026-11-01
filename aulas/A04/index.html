@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-aula="A04">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08192D">
+<title>Atividades — Aula 4 · Sistemas Operacionais</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <div class="marca">SISTEMAS OPERACIONAIS</div>
+    <div class="aula" id="topo-aula">Aula 4</div>
+  </div>
+  <div class="barra"><div class="barra-fill" id="barra"></div></div>
+</header>
+
+<main id="app">
+
+  <!-- ETAPA 0 — identificação -->
+  <section class="etapa ativa" data-etapa="0">
+    <h1>Atividades da Aula 4</h1>
+    <p class="lead" id="sub-aula"></p>
+    <div class="cartao">
+      <label for="nome">Seu nome completo</label>
+      <input id="nome" type="text" autocomplete="name" placeholder="Nome e sobrenome" required>
+      <div class="lado">
+        <div>
+          <label for="turma">Turma</label>
+          <input id="turma" type="text" autocomplete="off" placeholder="ex.: ADS 1º sem. noturno">
+        </div>
+        <div>
+          <label for="grupo">Dupla ou grupo <span class="opc">(opcional)</span></label>
+          <input id="grupo" type="text" autocomplete="off" placeholder="ex.: G3">
+        </div>
+      </div>
+      <p class="nota">Na atividade 2 vocês trabalham em dupla, e na 3 em grupo — mas cada um
+        entrega com o próprio nome.</p>
+    </div>
+    <div class="cartao destaque">
+      <h4>Como funciona</h4>
+      <p class="nota">Quatro atividades, uma por bloco da aula. Vá e volte entre elas quantas vezes quiser. <b>A entrega é única:</b> entregue só quando tiver terminado tudo — depois dela as respostas não mudam.</p>
+    </div>
+    <div class="nav">
+      <button class="btn primario grande" data-ir="1">Começar</button>
+    </div>
+  </section>
+
+  <!-- ETAPA 1 — atividade 1 -->
+  <section class="etapa" data-etapa="1">
+    <div class="eyebrow">Bloco 1 · Atividade 1</div>
+    <h2 id="a1-titulo"></h2>
+    <p class="nota" id="a1-tempo"></p>
+    <p class="lead" id="a1-instrucao"></p>
+    <div id="a1-itens"></div>
+    <div class="cartao">
+      <label for="a1-fechamento" id="a1-fechamento-rot"></label>
+      <textarea id="a1-fechamento" rows="3" placeholder="Uma frase basta."></textarea>
+    </div>
+    <div class="nav">
+      <button class="btn" data-ir="0">Voltar</button>
+      <button class="btn primario" data-ir="2">Ir para a simulação</button>
+    </div>
+  </section>
+
+  <!-- ETAPA 2 — atividade 2 (simulação) -->
+  <section class="etapa" data-etapa="2">
+    <div class="eyebrow">Bloco 2 · Atividade 2</div>
+    <h2 id="a2-titulo"></h2>
+    <p class="nota" id="a2-tempo"></p>
+    <p class="lead" id="a2-instrucao"></p>
+    <div id="a2-carga"></div>
+    <div id="a2-politicas"></div>
+    <div class="cartao">
+      <label for="a2-fechamento" id="a2-fechamento-rot"></label>
+      <textarea id="a2-fechamento" rows="3" placeholder="Uma frase basta."></textarea>
+    </div>
+    <div class="nav">
+      <button class="btn" data-ir="1">Voltar</button>
+      <button class="btn primario" data-ir="3">Ir para os cenários</button>
+    </div>
+  </section>
+
+  <!-- ETAPA 3 — atividade 3 -->
+  <section class="etapa" data-etapa="3">
+    <div class="eyebrow">Bloco 3 · Atividade 3</div>
+    <h2 id="a3-titulo"></h2>
+    <p class="nota" id="a3-tempo"></p>
+    <p class="lead" id="a3-instrucao"></p>
+    <div id="a3-cenarios"></div>
+    <div class="nav">
+      <button class="btn" data-ir="2">Voltar</button>
+      <button class="btn primario" data-ir="4">Ir para a lista prática</button>
+    </div>
+  </section>
+
+  <!-- ETAPA 4 — atividade 4 (lista prática) -->
+  <section class="etapa" data-etapa="4">
+    <div class="eyebrow">Bloco 4 · Avaliação</div>
+    <h2 id="a4-titulo"></h2>
+    <p class="nota" id="a4-tempo"></p>
+    <p class="lead" id="a4-instrucao"></p>
+    <div id="a4-carga"></div>
+    <div id="a4-questoes"></div>
+    <div id="a4-escritas"></div>
+    <div class="nav">
+      <button class="btn" data-ir="3">Voltar</button>
+      <button class="btn primario" data-ir="5">Revisar e entregar</button>
+    </div>
+  </section>
+
+  <!-- ETAPA 5 — revisão e entrega -->
+  <section class="etapa" data-etapa="5">
+    <div class="eyebrow">Entrega</div>
+    <h2>Confira antes de entregar</h2>
+    <div id="revisao"></div>
+    <div id="pendencias"></div>
+    <div class="nav">
+      <button class="btn" data-ir="4">Voltar</button>
+      <button class="btn primario grande" id="entregar">Entregar atividades</button>
+    </div>
+    <p class="nota" id="status-envio"></p>
+  </section>
+
+  <!-- ETAPA 6 — recibo -->
+  <section class="etapa" data-etapa="6">
+    <div class="selo">✓</div>
+    <h2>Atividades entregues</h2>
+    <p class="lead" id="recibo-linha"></p>
+    <div id="recibo-correcao"></div>
+    <div class="nav coluna">
+      <button class="btn" id="baixar">Baixar uma cópia das minhas respostas</button>
+      <button class="btn" id="ver-gabarito">Ver gabarito</button>
+      <button class="btn leve" data-ir="0">Voltar e corrigir algo</button>
+    </div>
+    <div id="gabarito"></div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <span id="rodape-txt"></span>
+</footer>
+
+<script src="../../js/ponte.js"></script>
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
