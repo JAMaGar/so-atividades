@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Painel da P1 · Sistemas Operacionais</title>
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/professor.css">
+<link rel="stylesheet" href="css/prova.css">
+<style>
+  .topo{position:static}
+  .st{font-size:.72rem; font-weight:600; padding:.05rem .45rem; border-radius:99px; background:#EEF2F6; color:var(--muted)}
+  .st.em_andamento{background:#E8F0F9; color:var(--blue)} .st.enviada{background:var(--ok); color:#2F4A1C}
+  .st.enviada_auto{background:#FFF6DF; color:#7A5C00}
+  .disc-card{margin:.8rem 0} .disc-card .notas{display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; margin-top:.6rem}
+  .disc-card .notas .btn{padding:.45rem .8rem} .disc-card .notas .btn.sel{background:var(--navy); color:#fff; border-color:var(--navy)}
+  .disc-card input.com{flex:1 1 16rem; margin:0; font-size:.92rem}
+  .variante{margin-top:1.4rem; padding:.6rem .8rem; background:#fff; border:1px solid var(--hair); border-radius:12px}
+  details.ref summary{cursor:pointer; color:var(--blue); font-size:.9rem}
+  td.a-baixo{background:#FBEAEC} td.a-alto{background:#EAF3E4}
+  .det-q{border-top:1px solid var(--hair); padding:.6rem 0}
+</style>
+</head>
+<body>
+<header class="topo"><div class="topo-in">
+  <div><div class="marca">PAINEL DA P1</div><div class="sub">Sistemas Operacionais · Fatec São Paulo</div></div>
+  <div class="sub"><a href="professor.html" style="color:#E9B4B8">painel das atividades</a></div>
+</div></header>
+<main class="largo">
+  <section id="entrada" hidden>
+    <div class="cartao estreito">
+      <h1>Chave do professor</h1>
+      <p class="nota">A mesma do painel das atividades (aba <b>Leia-me</b> da planilha).</p>
+      <form id="form-chave"><label>Chave<input id="chave" type="password" autocomplete="off"></label>
+        <button class="btn primario" type="submit">Abrir painel</button></form>
+      <div id="msg-chave"></div>
+    </div>
+  </section>
+  <section id="painel" hidden>
+    <div class="barra-aluno">
+      <span id="resumo">…</span>
+      <span><a id="planilha" target="_blank" rel="noopener">abrir a planilha</a> · <button class="link" id="bt-sair">sair</button></span>
+    </div>
+    <div class="controles" id="controles"></div>
+    <nav class="abas" id="abas">
+      <button class="aba ativa" data-tela="andamento">Andamento e notas</button>
+      <button class="aba" data-tela="C1">Discursiva C1</button>
+      <button class="aba" data-tela="C2">Discursiva C2</button>
+      <button class="aba" data-tela="analise">Análise das questões</button>
+    </nav>
+    <div id="msg"></div>
+    <div id="conteudo"></div>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/professor_prova.js"></script>
+</body>
+</html>

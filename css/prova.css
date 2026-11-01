@@ -1,0 +1,61 @@
+/* Página da P1 — complementa site.css. */
+.relogio{display:flex; flex-direction:column; align-items:flex-end; line-height:1.1}
+.relogio span{font-size:1.45rem; font-weight:700; font-variant-numeric:tabular-nums; color:#fff}
+.relogio small{font-size:.7rem; color:#B8C4D4}
+.relogio.alerta span{color:#FFD36B} .relogio.critico span{color:#FF8A8A}
+.topo{position:sticky; top:0; z-index:5}
+.regras{margin:.6rem 0 0; padding-left:1.2rem} .regras li{margin:.35rem 0}
+.faixa{background:#FFF6DF; border-left:4px solid var(--gold); padding:.6rem .8rem; border-radius:0 8px 8px 0; margin:.6rem 0; font-size:.92rem}
+.faixa.ok{background:var(--ok); border-left-color:var(--green)}
+.mapa{display:grid; grid-template-columns:repeat(8, 1fr); gap:.3rem; margin:.4rem 0 .8rem}
+.mapa button{font:inherit; font-size:.85rem; font-weight:600; padding:.45rem 0; border-radius:8px; border:1px solid #C9D2DE;
+             background:#fff; color:var(--muted); cursor:pointer; position:relative}
+.mapa button.resp{background:#E8F0F9; color:var(--blue); border-color:#9BB8D8}
+.mapa button.atual{outline:2px solid var(--navy); outline-offset:1px}
+.mapa button.marc::after{content:""; position:absolute; top:3px; right:4px; width:7px; height:7px; border-radius:50%; background:var(--gold)}
+.legenda{font-size:.76rem; color:var(--muted); display:flex; gap:.8rem; flex-wrap:wrap; margin-top:-.4rem; margin-bottom:.6rem}
+.q-cab{display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; margin-bottom:.4rem}
+.q-num{font-size:.8rem; letter-spacing:.08em; font-weight:700; color:var(--red)}
+.q-pts{font-size:.8rem; color:var(--muted)}
+.enun{font-size:1.02rem; color:var(--ink); margin:.2rem 0 .7rem}
+.enun code, .conv code{background:#EEF2F6; padding:0 .25rem; border-radius:4px; font-size:.92em}
+.conv{font-size:.84rem; color:var(--muted); background:var(--tint); border-radius:8px; padding:.5rem .7rem; margin:.4rem 0 .7rem}
+.alt{display:flex; gap:.6rem; align-items:flex-start; border:1px solid var(--hair); border-radius:10px; padding:.65rem .7rem;
+     margin:.45rem 0; cursor:pointer; font-weight:400; font-size:.97rem; color:var(--txt); background:#fff}
+.alt input{width:auto; margin:.2rem 0 0; flex:0 0 auto}
+.alt.sel{border-color:var(--blue); background:#F1F6FC}
+.alt b{color:var(--ink)}
+.tab-rol{overflow-x:auto; margin:.3rem 0 .8rem}
+table.dados{border-collapse:collapse; font-size:.92rem; min-width:100%}
+.dados th{background:var(--navy); color:#fff; font-weight:600; padding:.4rem .55rem; text-align:center; white-space:nowrap}
+.dados td{border-bottom:1px solid var(--hair); padding:.4rem .55rem; text-align:center; white-space:nowrap; font-variant-numeric:tabular-nums}
+.item{border-top:1px solid var(--hair); padding:.6rem 0 .2rem}
+.item > .rot{font-weight:600; color:var(--ink); font-size:.93rem; display:flex; justify-content:space-between; gap:.4rem}
+.item > .rot small{font-weight:400; color:var(--muted)}
+.item input.num{max-width:9rem}
+.vetor{display:flex; gap:.4rem; align-items:center} .vetor input{width:4.2rem; text-align:center} .vetor span{font-size:.8rem; color:var(--muted)}
+.opcoes{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.3rem}
+.chip{display:inline-flex; align-items:center; gap:.35rem; border:1px solid #C9D2DE; border-radius:99px; padding:.35rem .75rem;
+      font-weight:500; font-size:.92rem; margin:0; cursor:pointer; background:#fff; color:var(--txt)}
+.chip input{width:auto; margin:0}
+.chip.sel{border-color:var(--blue); background:#F1F6FC; color:var(--blue)}
+.opcoes.col{flex-direction:column; align-items:stretch} .opcoes.col .chip{border-radius:10px}
+.seq-saida{font-size:1.1rem; font-weight:700; color:var(--ink); min-height:1.6rem; margin:.3rem 0; letter-spacing:.04em}
+textarea{display:block; width:100%; min-height:11rem; font:inherit; font-size:1rem; padding:.6rem .7rem; border:1px solid #C9D2DE;
+         border-radius:10px; resize:vertical}
+.cont{font-size:.76rem; color:var(--muted); text-align:right}
+.nav{display:flex; gap:.5rem; margin-top:1rem}
+.nav .btn{flex:1}
+.btn.envio{background:var(--navy); color:#fff; border-color:var(--navy)}
+.marcar{font-size:.85rem; margin-top:.6rem}
+.resumo-lista{margin:.5rem 0; padding-left:1.2rem}
+.recibo b{color:var(--ink)} .grande{font-size:2.1rem; font-weight:700; color:var(--ink)}
+.res-q{margin:.8rem 0}
+.res-q .alt{cursor:default}
+.alt.certa{border-color:var(--green); background:var(--ok)} .alt.errada{border-color:var(--red); background:var(--erro)}
+.pts{font-weight:700} .pts.ok{color:var(--green)} .pts.no{color:var(--red)}
+.coment{font-size:.9rem; background:var(--tint); border-radius:8px; padding:.55rem .75rem; margin-top:.5rem}
+.res-itens td, .res-itens th{text-align:left; white-space:normal}
+.texto-aluno{white-space:pre-wrap; background:#fff; border:1px solid var(--hair); border-radius:8px; padding:.5rem .7rem; font-size:.93rem}
+@media (max-width:520px){ .mapa{grid-template-columns:repeat(6, 1fr)} .enun{font-size:1rem} }
+.relogio[hidden]{display:none}

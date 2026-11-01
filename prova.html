@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>P1 · Sistemas Operacionais · Fatec São Paulo</title>
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/prova.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-in">
+    <div><div class="marca">SISTEMAS OPERACIONAIS · P1</div><div class="sub">Fatec São Paulo · ADS · prova avaliativa on-line</div></div>
+    <div class="relogio" id="relogio" hidden><span id="tempo">--:--</span><small id="salvo">—</small></div>
+  </div>
+</header>
+
+<main>
+  <!-- entrada: o mesmo RM e senha das atividades -->
+  <section id="entrada" hidden>
+    <div class="cartao estreito">
+      <h1>Entrar na P1</h1>
+      <p class="nota">Use o mesmo RM e a mesma senha das atividades das aulas.</p>
+      <form id="form-entrada" autocomplete="on">
+        <label>RM<input id="rm" inputmode="numeric" autocomplete="username" required maxlength="20"></label>
+        <label>Senha<input id="senha" type="password" autocomplete="current-password" required maxlength="40"></label>
+        <div id="cadastro" hidden>
+          <p class="aviso">Este RM ainda não tem cadastro. Confira se digitou certo. Se for o seu primeiro acesso ao sistema, complete abaixo: a senha digitada passa a ser a sua.</p>
+          <label>Repita a senha<input id="senha2" type="password" autocomplete="new-password" maxlength="40"></label>
+          <label>Nome completo<input id="nome-c" autocomplete="name" maxlength="80"></label>
+          <label>Turma<input id="turma-c" placeholder="ex.: ADS 1º noturno" maxlength="40"></label>
+        </div>
+        <button class="btn primario" id="bt-entrar" type="submit">Entrar</button>
+      </form>
+      <div id="msg-entrada"></div>
+      <p class="nota pe">Esqueceu a senha? Peça ao professor para zerá-la. As atividades das aulas ficam em <a href="./">outra página</a>.</p>
+    </div>
+  </section>
+
+  <section id="area" hidden>
+    <div class="barra-aluno"><span id="quem"></span><span><button class="link" id="bt-sair">sair</button></span></div>
+    <div id="msg"></div>
+    <div id="tela"></div>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/prova.js"></script>
+</body>
+</html>
