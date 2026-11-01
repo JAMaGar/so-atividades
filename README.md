@@ -3,7 +3,6 @@
 Páginas das atividades das aulas 2 a 7 da disciplina de Sistemas Operacionais (CST em Análise e Desenvolvimento de Sistemas), Prof. Me. José Augusto Martins Garcia.
 
 - **Alunos:** abram a página principal, entrem com o RM e a senha criada no primeiro acesso e escolham a aula.
-- **Professor:** `professor.html`.
 
 Este repositório tem só as páginas. As entregas, a correção e os gabaritos ficam num serviço privado.
 
