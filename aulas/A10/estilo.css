@@ -1,0 +1,369 @@
+/* Atividades da Aula 2 — folha de estilo.
+   Paleta da disciplina; layout pensado primeiro para celular.
+   Sem fonte externa: a página precisa funcionar sem internet. */
+
+:root{
+  --navy:#08192D; --ink:#102A43; --red:#A6192E; --blue:#1F4E78;
+  --green:#548235; --gold:#BF9000; --purple:#7B4FA6; --teal:#1B6E6E;
+  --txt:#343F4F; --muted:#768499; --hair:#E1E6ED; --tint:#F6F8FB;
+  --ok:#EAF3E4; --erro:#FBEAEC;
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; font-family:var(--fonte); font-size:16px; line-height:1.5;
+  color:var(--txt); background:#fff; padding-bottom:env(safe-area-inset-bottom);
+}
+
+/* ── topo ─────────────────────────────────────────────────────────────── */
+.topo{position:sticky; top:0; z-index:20; background:var(--navy); color:#fff;
+      box-shadow:0 1px 6px rgba(8,25,45,.18)}
+.topo-in{display:flex; justify-content:space-between; align-items:baseline;
+         padding:.7rem 1rem .55rem; max-width:820px; margin:0 auto}
+.marca{font-size:.72rem; letter-spacing:.14em; font-weight:700; color:#E9B4B8}
+.aula{font-size:.78rem; color:#B8C4D4}
+.barra{height:3px; background:#1b3352}
+.barra-fill{height:100%; width:0; background:var(--red); transition:width .25s ease}
+
+/* ── estrutura ────────────────────────────────────────────────────────── */
+main{max-width:820px; margin:0 auto; padding:1.1rem 1rem 3rem}
+.etapa{display:none; animation:entra .18s ease}
+.etapa.ativa{display:block}
+@keyframes entra{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+
+h1{font-size:1.5rem; line-height:1.2; color:var(--ink); margin:.2rem 0 .5rem}
+h2{font-size:1.28rem; line-height:1.25; color:var(--ink); margin:.15rem 0 .5rem}
+h3.sub{font-size:1rem; color:var(--ink); margin:1.6rem 0 .3rem;
+       padding-top:.9rem; border-top:1px solid var(--hair)}
+.eyebrow{font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+         font-weight:700; color:var(--red); margin-bottom:.25rem}
+.lead{font-size:.98rem; color:var(--txt); margin:.2rem 0 1rem}
+.nota{font-size:.82rem; color:var(--muted); margin:.4rem 0 .8rem}
+.opc{font-weight:400; color:var(--muted)}
+
+/* ── cartões e campos ─────────────────────────────────────────────────── */
+.cartao{border:1px solid var(--hair); border-radius:10px; padding:.85rem .9rem;
+        margin:.7rem 0; background:#fff}
+.cartao.destaque{background:var(--tint); border-left:4px solid var(--gold)}
+.cartao h4{margin:0 0 .15rem; font-size:1rem; color:var(--ink)}
+.cartao .rec{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+             font-weight:700; color:var(--red); margin-bottom:.35rem}
+.cartao.c-blue{border-left:4px solid var(--blue)}
+.cartao.c-red{border-left:4px solid var(--red)}
+.cartao.c-green{border-left:4px solid var(--green)}
+.cartao.c-purple{border-left:4px solid var(--purple)}
+
+label{display:block; font-size:.85rem; font-weight:600; color:var(--ink);
+      margin:.6rem 0 .25rem}
+input[type=text], textarea, select{
+  width:100%; font-family:inherit; font-size:16px; color:var(--txt);
+  border:1px solid #C9D2DE; border-radius:8px; padding:.6rem .65rem;
+  background:#fff; -webkit-appearance:none; appearance:none;
+}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),
+       linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+       background-position:calc(100% - 18px) 52%, calc(100% - 13px) 52%;
+       background-size:5px 5px,5px 5px; background-repeat:no-repeat; padding-right:2rem}
+textarea{resize:vertical; line-height:1.45}
+input:focus, textarea:focus, select:focus{outline:none; border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(31,78,120,.13)}
+.lado{display:flex; gap:.7rem}
+.lado>div{flex:1}
+
+/* ── atividade 2: ordenação ───────────────────────────────────────────── */
+ol.ordem{list-style:none; padding:0; margin:.5rem 0 0}
+ol.ordem li{display:flex; align-items:stretch; gap:.5rem; margin-bottom:.4rem}
+.pos{flex:0 0 2rem; display:flex; align-items:center; justify-content:center;
+     background:var(--navy); color:#fff; font-weight:700; font-size:.9rem;
+     border-radius:8px 0 0 8px}
+.marco{flex:1; border:1px solid var(--hair); border-left:none; border-right:none;
+       padding:.55rem .6rem; font-size:.9rem; display:flex; align-items:center}
+.setas{flex:0 0 4.6rem; display:flex}
+.setas button{flex:1; border:1px solid var(--hair); background:var(--tint);
+  font-size:1.1rem; color:var(--ink); cursor:pointer; min-height:44px}
+.setas button:first-child{border-radius:0}
+.setas button:last-child{border-radius:0 8px 8px 0; border-left:none}
+.setas button:active{background:#e6ecf4}
+.setas button:disabled{color:#C9D2DE}
+
+/* ── atividade 2: pareamento ──────────────────────────────────────────── */
+.par{border:1px solid var(--hair); border-radius:10px; padding:.7rem .75rem; margin:.5rem 0}
+.par .gid{font-weight:700; color:var(--red); font-size:.8rem}
+.par p{margin:.15rem 0 .5rem; font-size:.92rem}
+
+/* ── botões ───────────────────────────────────────────────────────────── */
+.nav{display:flex; gap:.6rem; margin:1.6rem 0 .5rem}
+.nav.coluna{flex-direction:column}
+.btn{flex:1; min-height:48px; padding:.7rem 1rem; font-family:inherit; font-size:1rem;
+     font-weight:600; color:var(--ink); background:#fff; border:1.5px solid #C9D2DE;
+     border-radius:9px; cursor:pointer}
+.btn:active{transform:translateY(1px)}
+.btn.primario{background:var(--red); border-color:var(--red); color:#fff}
+.btn.leve{border:none; color:var(--muted); font-weight:500}
+.btn.grande{font-size:1.05rem; min-height:56px}
+.btn[disabled]{opacity:.55}
+
+/* ── revisão, recibo e gabarito ───────────────────────────────────────── */
+.resumo{border:1px solid var(--hair); border-radius:10px; margin:.6rem 0; overflow:hidden}
+.resumo .cab{background:var(--tint); padding:.5rem .75rem; font-weight:700;
+             font-size:.9rem; color:var(--ink); border-bottom:1px solid var(--hair)}
+.resumo .item{padding:.45rem .75rem; font-size:.88rem; border-bottom:1px solid #EEF2F6}
+.resumo .item:last-child{border-bottom:none}
+.resumo .item b{color:var(--ink)}
+.vazio{color:var(--muted); font-style:italic}
+.aviso{background:var(--erro); border-left:4px solid var(--red); border-radius:8px;
+       padding:.7rem .8rem; font-size:.9rem; margin:.6rem 0}
+.aviso ul{margin:.35rem 0 0; padding-left:1.1rem}
+.selo{width:56px; height:56px; border-radius:50%; background:var(--green); color:#fff;
+      font-size:1.9rem; line-height:56px; text-align:center; margin:.5rem 0 .7rem}
+.placar{display:flex; gap:.5rem; margin:.8rem 0}
+.placar div{flex:1; border:1px solid var(--hair); border-radius:10px; padding:.6rem .4rem;
+            text-align:center}
+.placar .n{font-size:1.5rem; font-weight:700; color:var(--ink); display:block}
+.placar .r{font-size:.72rem; color:var(--muted); line-height:1.25}
+.gab{border:1px solid var(--hair); border-radius:10px; padding:.75rem .8rem; margin:.6rem 0}
+.gab h4{margin:.1rem 0 .4rem; color:var(--ink); font-size:.95rem}
+.gab table{width:100%; border-collapse:collapse; font-size:.83rem}
+.gab td{padding:.32rem .3rem; border-bottom:1px solid #EEF2F6; vertical-align:top}
+.gab td:first-child{font-weight:600; color:var(--ink); white-space:nowrap; padding-right:.6rem}
+.certo{background:var(--ok)} .errado{background:var(--erro)}
+
+.faixa-rede{background:#EAF0F7; border-left:4px solid var(--blue); border-radius:8px;
+  padding:.55rem .7rem; margin:0 0 .9rem; font-size:.82rem; color:var(--ink)}
+
+.rodape{border-top:1px solid var(--hair); padding:.9rem 1rem 1.4rem; text-align:center;
+        font-size:.75rem; color:var(--muted)}
+
+/* ── telas maiores ────────────────────────────────────────────────────── */
+@media (min-width:700px){
+  body{font-size:17px}
+  h1{font-size:1.9rem} h2{font-size:1.55rem}
+  main{padding:1.6rem 1.5rem 4rem}
+  .a1-grade{display:flex; gap:.8rem}
+  .a1-grade>div{flex:1}
+}
+
+/* ── atividade 3: escolha de opção, registro de laboratório ───────────── */
+.legenda{display:flex; flex-direction:column; gap:.2rem; background:var(--tint);
+  border-radius:8px; padding:.55rem .7rem; margin:.2rem 0 .9rem;
+  font-size:.78rem; color:var(--muted)}
+.legenda b{color:var(--ink)}
+
+.item-q{border:1px solid var(--hair); border-radius:10px; padding:.7rem .75rem; margin:.55rem 0;
+  border-left:4px solid var(--hair)}
+.item-q.respondida{border-left-color:var(--green); background:#FCFDFB}
+.item-q .enun{margin:0 0 .55rem; font-size:.94rem; color:var(--ink)}
+.item-q .enun .n{display:inline-block; min-width:1.35rem; height:1.35rem; line-height:1.35rem;
+  text-align:center; border-radius:50%; background:var(--navy); color:#fff;
+  font-size:.74rem; font-weight:700; margin-right:.45rem}
+
+.opcoes{display:flex; gap:.4rem}
+.opcoes.coluna{flex-direction:column}
+.opc-btn{flex:1; min-height:44px; padding:.5rem .4rem; font-family:inherit; font-size:.86rem;
+  font-weight:600; color:var(--ink); background:#fff; border:1.5px solid #C9D2DE;
+  border-radius:8px; cursor:pointer; text-align:center; line-height:1.2}
+.opc-btn.largo{text-align:left; font-weight:500; font-size:.88rem; padding:.6rem .7rem}
+.opc-btn.sel{background:var(--navy); border-color:var(--navy); color:#fff}
+.opc-btn:active{transform:translateY(1px)}
+
+label .cmd{display:block; font-family:ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size:.74rem; color:var(--blue); font-weight:400; margin-top:.1rem}
+select{width:100%; min-height:46px; padding:.5rem .6rem; font-family:inherit; font-size:1rem;
+  color:var(--ink); background:#fff; border:1.5px solid #C9D2DE; border-radius:8px;
+  margin:.15rem 0 .7rem}
+
+/* ── aula 4: fita de Gantt montável, tabela de carga, grades numéricas ── */
+.mini{display:block; font-size:.74rem; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; margin:.7rem 0 .3rem}
+
+.c0{background:#DCE3EB!important; color:var(--ink)!important}
+.c1{background:var(--blue)!important; color:#fff!important}
+.c2{background:var(--green)!important; color:#fff!important}
+.c3{background:var(--red)!important; color:#fff!important}
+.c4{background:var(--gold)!important; color:#fff!important}
+.c5{background:var(--purple)!important; color:#fff!important}
+.c6{background:var(--teal)!important; color:#fff!important}
+
+table.carga{width:100%; border-collapse:collapse; font-size:.86rem; margin:.3rem 0}
+table.carga th{text-align:left; color:var(--muted); font-size:.74rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.04em; padding:.25rem .3rem; white-space:nowrap}
+table.carga td{text-align:center; padding:.25rem .3rem; border-bottom:1px solid #EEF2F6;
+  color:var(--txt)}
+table.carga td.pid{font-weight:700; border-radius:6px}
+
+.montador{display:flex; flex-wrap:wrap; gap:.35rem; align-items:center; margin:.2rem 0 .5rem}
+.chip{font:inherit; font-size:.86rem; font-weight:700; padding:.42rem .6rem; min-height:38px;
+  border:none; border-radius:8px; cursor:pointer; color:#fff}
+.chip.apaga{background:#fff; color:var(--muted); border:1.5px solid var(--hair); font-weight:600}
+.fatia{font-size:.78rem; color:var(--muted); display:flex; align-items:center; gap:.25rem}
+.fatia .qtd{width:3.6rem; min-height:38px; padding:.2rem .3rem; text-align:center; margin:0}
+
+.fita-wrap{margin:.2rem 0 .3rem}
+.fita{display:flex; min-height:44px; border:1px solid var(--hair); border-radius:8px;
+  overflow:hidden; background:var(--tint)}
+.fita .seg{display:flex; flex-direction:column; align-items:center; justify-content:center;
+  min-width:0; border-right:1px solid #fff; overflow:hidden}
+.fita .seg span{font-size:.8rem; font-weight:700; line-height:1}
+.fita .seg small{font-size:.66rem; opacity:.85; line-height:1.2}
+.fita .vazia{flex:1; display:flex; align-items:center; justify-content:center;
+  font-size:.78rem; color:var(--muted); padding:.4rem}
+.escala{display:flex; font-size:.68rem; color:var(--muted); font-variant-numeric:tabular-nums}
+.escala span{text-align:right; min-width:0; overflow:hidden}
+.cartao.completa{border-color:var(--green)}
+
+.esperas{display:flex; flex-wrap:wrap; gap:.4rem}
+.esperas>div{flex:1 1 5.5rem; display:flex; align-items:center; gap:.35rem}
+.esperas .pid{display:inline-flex; align-items:center; justify-content:center;
+  min-width:2.1rem; height:2.1rem; border-radius:6px; font-size:.78rem; font-weight:700}
+.esperas input{margin:0; text-align:center}
+
+.opcoes.grade{display:grid; grid-template-columns:repeat(2, 1fr); gap:.35rem}
+.cartao.c-navy{border-left:4px solid var(--navy)}
+.cartao.c-gold{border-left:4px solid var(--gold)}
+.placar{flex-wrap:wrap}
+.placar div{flex:1 1 7rem}
+
+/* ── aula 5: aviso positivo e mensagem de erro no envio ───────────────── */
+.aviso.ok{background:var(--ok); border-left-color:var(--green)}
+.erro-txt{color:var(--red); font-weight:600}
+
+/* ── aula 5: exemplo trabalhado do projeto integrador ─────────────────── */
+details.exemplo{border:1px solid var(--hair); border-left:4px solid var(--blue);
+  border-radius:10px; margin:.7rem 0; background:#fff}
+details.exemplo summary{padding:.75rem .85rem; font-weight:600; color:var(--blue);
+  cursor:pointer; font-size:.92rem; list-style:none}
+details.exemplo summary::before{content:"\25B8  "; font-weight:700}
+details.exemplo[open] summary::before{content:"\25BE  "}
+details.exemplo summary::-webkit-details-marker{display:none}
+.ex-corpo{padding:0 .85rem .85rem}
+.ex-item{border-top:1px solid var(--hair); padding:.6rem 0}
+.ex-rot{font-size:.76rem; font-weight:700; color:var(--navy); text-transform:uppercase;
+  letter-spacing:.03em; margin:.5rem 0 .3rem}
+.ex-txt{font-size:.86rem; color:var(--txt); line-height:1.5}
+.ex-nota{font-size:.78rem; color:var(--muted); margin-top:.35rem; font-style:italic}
+table.ex-tab{width:100%; border-collapse:collapse; font-size:.8rem; margin-top:.25rem}
+table.ex-tab th{text-align:left; padding:.3rem .35rem; color:var(--muted);
+  font-size:.72rem; text-transform:uppercase; border-bottom:1px solid var(--hair)}
+table.ex-tab td{padding:.35rem; vertical-align:top; border-bottom:1px solid #EEF2F6}
+table.ex-tab td.ruim{color:var(--red); width:48%}
+table.ex-tab td.bom{color:var(--green)}
+
+/* ── aula 6: link de download e comando em nota ──────────────────────── */
+a.btn{display:flex; align-items:center; justify-content:center; text-decoration:none;
+  color:var(--ink); margin:.2rem 0 .5rem}
+.nota .cmd{display:block; font-family:ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size:.8rem; color:var(--blue); margin-top:.25rem}
+
+/* ── aula 6: simulador do produtor-consumidor ────────────────────────── */
+.sim .btn{margin:.4rem 0 .2rem}
+table.sim-tab td, table.sim-tab th{font-size:.76rem; padding:.3rem .25rem}
+table.sim-tab td:first-child{font-weight:600; color:var(--ink)}
+details.sim-extra{margin-top:.8rem}
+
+/* ── aula 6: passo a passo do produtor-consumidor ────────────────────── */
+.pp{margin-top:.6rem}
+.pp-abas{display:grid; grid-template-columns:1fr 1fr; gap:.35rem; margin-bottom:.6rem}
+.pp-abas button{font:inherit; font-size:.8rem; font-weight:600; color:var(--ink); background:#fff;
+  border:1.5px solid #C9D2DE; border-radius:8px; padding:.45rem .4rem; min-height:42px;
+  text-align:left; cursor:pointer; display:flex; align-items:center; gap:.4rem}
+.pp-abas button.sel{background:var(--navy); color:#fff; border-color:var(--navy)}
+.pp-n{display:inline-block; min-width:1.2rem; height:1.2rem; line-height:1.2rem; border-radius:50%;
+  text-align:center; font-size:.7rem; background:var(--tint); color:var(--ink)}
+.pp-abas button.sel .pp-n{background:#fff}
+.pp-ideia{background:#fff; border:1px solid var(--hair); border-radius:10px; padding:.5rem .7rem}
+.pp-ideia .pp-ef{margin:0; font-size:.86rem}
+.pp-barra{position:sticky; bottom:0; z-index:5; background:#fff; margin:.7rem -.2rem 0;
+  padding:.45rem .5rem .4rem; border-top:2px solid var(--navy); border-radius:10px 10px 0 0;
+  box-shadow:0 -4px 12px rgba(8,25,45,.12)}
+.pp-narra{max-height:42vh; overflow-y:auto}
+.pp-passo{font-size:.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--muted)}
+.pp-ef{margin:.15rem 0 0; font-size:.88rem; color:var(--ink); line-height:1.4}
+.pp-ef code, .pp-lin code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:.8rem}
+.pp-ef code{background:#FFF4CC; padding:.05rem .3rem; border-radius:4px}
+.pp-nota{margin-top:.35rem; padding:.4rem .55rem; border-left:4px solid var(--gold);
+  background:#FFFBEE; font-size:.86rem; color:var(--ink); border-radius:0 6px 6px 0}
+.pp-fim{margin-top:.55rem; padding:.55rem .65rem; border-radius:8px; font-size:.86rem; color:var(--ink)}
+.pp-fim.bom{background:var(--ok); border-left:4px solid var(--green)}
+.pp-fim.ruim{background:var(--erro); border-left:4px solid var(--red)}
+.pp-placar{margin-top:.35rem; font-size:.76rem; color:var(--muted)}
+.pp-rot{font-size:.68rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--muted); margin:.75rem 0 .3rem}
+.pp-buf{display:flex; gap:.4rem}
+.pp-slot{flex:1; border:1.5px solid var(--blue); border-radius:8px; text-align:center;
+  padding:.35rem .2rem .25rem; background:#F2F6FB; transition:background .3s}
+.pp-slot b{display:block; font-size:1.25rem; color:var(--ink)}
+.pp-slot.vazio b{color:#B8C2CF}
+.pp-idx{font-size:.68rem; color:var(--muted)}
+.pp-marcas{min-height:1.1rem}
+.pp-seta{display:inline-block; font-size:.66rem; font-weight:700; color:#fff; background:var(--blue);
+  border-radius:4px; padding:0 .3rem; margin:0 .1rem}
+.pp-seta.sai{background:var(--gold)}
+.pp-vars{display:flex; flex-wrap:wrap; gap:.3rem; margin-top:.4rem}
+.pp-var{font-size:.8rem; border:1px solid var(--hair); border-radius:6px; padding:.2rem .45rem;
+  background:#fff; color:var(--txt)}
+.pp-var.sem{border-color:#C9B5DD}
+.mudou{background:#FFF4CC !important; border-color:var(--gold) !important}
+.pp-ths{display:flex; flex-direction:column; gap:.3rem}
+.pp-t{display:flex; flex-wrap:wrap; align-items:center; gap:.35rem; font-size:.82rem;
+  border:1px solid var(--hair); border-radius:8px; padding:.3rem .5rem; background:#fff}
+.pp-t.agora{border-color:var(--gold); background:#FFFBEE}
+.pp-t.dormindo{background:#F3F0F8; border-style:dashed}
+.pp-t.terminou{opacity:.55}
+.pp-est{font-weight:700; color:var(--ink)}
+.pp-loc{color:var(--muted); font-size:.76rem}
+.pp-chip{display:inline-block; font-size:.7rem; font-weight:700; color:#fff; border-radius:10px;
+  padding:.05rem .45rem; margin-left:.15rem; border:1.5px solid transparent}
+.t-p1{background:var(--blue)} .t-p2{background:var(--green)} .t-c1{background:var(--red)}
+.pp-chip.dorme{background:#fff !important; border-style:dashed}
+.pp-chip.t-p1.dorme{color:var(--blue); border-color:var(--blue)}
+.pp-chip.t-p2.dorme{color:var(--green); border-color:var(--green)}
+.pp-chip.t-c1.dorme{color:var(--red); border-color:var(--red)}
+.pp-lin{margin:0; padding:0 0 0 1.7rem; font-size:.8rem}
+.pp-lin li{padding:.14rem .3rem; border-radius:5px; color:var(--txt)}
+.pp-lin li.exec{background:#FFE08A}
+.pp-aqui{float:right}
+.pp-feito{font-size:.66rem; font-weight:700; color:#7A5B00; margin-right:.2rem}
+.pp-leg{margin-top:.5rem}
+.pp-ctrl{display:flex; gap:.35rem; padding-top:.45rem}
+.pp-ctrl .btn{margin:0; min-height:44px; padding:.35rem .55rem; flex:0 0 auto}
+.pp-ctrl .primario{flex:1}
+.pp-ctrl .btn:disabled{opacity:.4}
+
+/* ── aula 7: grafos e jogo do banqueiro ──────────────────────────────── */
+h3.sub{font-size:.95rem; color:var(--ink); margin:1.1rem 0 .3rem}
+.grafo-img{display:block; width:100%; max-width:420px; margin:.2rem auto .5rem;
+  border:1px solid var(--hair); border-radius:8px; background:#fff}
+.rot-q{margin:.55rem 0 .25rem; font-size:.84rem; font-weight:600; color:var(--ink)}
+.jogo .jg-rodada{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; margin:.2rem 0 .35rem}
+table.jg-tab{width:100%; border-collapse:collapse; font-size:.86rem; margin:.2rem 0 .4rem}
+table.jg-tab th{font-size:.7rem; color:var(--muted); font-weight:600; text-align:center;
+  padding:.25rem .2rem; border-bottom:1px solid var(--hair)}
+table.jg-tab td{text-align:center; padding:.35rem .2rem; border-bottom:1px solid #EEF2F6}
+table.jg-tab tr.foco td{background:#FFF4CC}
+.jg-livres{background:var(--navy); color:#fff; border-radius:8px; padding:.5rem .7rem;
+  font-size:.92rem; margin:.3rem 0 .6rem}
+.jg-livres .nota{color:#C9D3E0; font-size:.74rem}
+.jg-pedido h4{font-size:1.05rem}
+
+/* ── Aula 10: endereço, conferir, memória ─────────────────────────── */
+.linha-end{display:flex; gap:.5rem; align-items:center}
+.linha-end input{flex:1; min-width:0}
+.opc-btn.trap{flex:0 0 auto; min-width:5.2rem}
+.btn.conferir{margin-top:.5rem; padding:.45rem 1rem; font-size:.92rem}
+.retorno{margin-top:.55rem; padding:.6rem .8rem; border-radius:8px; font-size:.92rem; line-height:1.45}
+.retorno.certo{background:#EAF3E4; border-left:4px solid #548235}
+.retorno.errado{background:#FBEAEC; border-left:4px solid #A6192E}
+.retorno ol{margin:.35rem 0 0; padding-left:1.2rem} .retorno li{margin:.2rem 0}
+.ok-txt{color:#3D6B22} .erro-txt{color:#A6192E}
+.pedido{margin:.6rem 0 .4rem; font-size:.98rem}
+.mem{display:flex; flex-direction:column; border:1px solid #C9D2DE; border-radius:8px; overflow:hidden; margin:.4rem 0 .6rem}
+.blk{position:relative; display:flex; align-items:center; justify-content:center; font:inherit; font-size:.9rem;
+     font-weight:600; color:#102A43; border:0; border-bottom:1px solid #fff; width:100%; padding:0 3.6rem}
+.blk .ini{position:absolute; left:.45rem; font-size:.72rem; font-weight:400; opacity:.8}
+.blk.livre{background:repeating-linear-gradient(135deg,#fff 0 6px,#E6EBF1 6px 8px); color:#5B6B80}
+button.blk.livre{cursor:pointer; outline:2px dashed #1F4E78; outline-offset:-4px; color:#1F4E78}
+button.blk.livre:active{background:#DCE8F5}
